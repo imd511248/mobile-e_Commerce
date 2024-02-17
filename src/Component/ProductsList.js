@@ -8,7 +8,6 @@ const ProductList = ({ searchTerm }) => {
   // const [searchTerm, setSearchTerm] = useState("null");
   const dispatch = useDispatch();
   const { data: products, status } = useSelector((state) => state.product);
-  console.log(products);
   const [selectedCategories, setSelectedCategories] = useState([]);
 
   useEffect(() => {

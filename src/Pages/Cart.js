@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { add, removeItem } from "../Store/cartSlice";
+import { increase, decrease, removeItem } from "../Store/cartSlice";
 import NavBar from "../Component/Navbar";
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -14,20 +14,23 @@ const Cart = () => {
   const handleRemove = (productId, price) => {
     dispatch(removeItem({ id: productId, price }));
   };
-  const handleAdd = (productId, price) => {
-    dispatch(add({ id: productId, price }));
+  const handleIncrease = (productId, price) => {
+    dispatch(increase({ id: productId, price }));
   };
-
+  const handleDecrease = (productId, price) => {
+    dispatch(decrease({ id: productId, price }));
+  };
   const clearAllProduct = () => {
     for (let i = 0; i < items.length; i++) {
       dispatch(removeItem({ id: items[i].id, price: items[i].price }));
     }
   };
-
+  // handleAdd;
+  // handleRemove
   return (
     <>
       <NavBar />
-      <div className="max-w-3xl mx-auto p-4">
+      <div className="max-w-3xl mx-auto p-4 mt-28">
         {items.length === 0 ? (
           <div className="text-center text-gray-600 font-black text-3xl ">
             Your cart is empty.
@@ -58,11 +61,11 @@ const Cart = () => {
                   </div>
                   <div className="w-full flex items-center justify-between place-items-center">
                     <div className="flex items-center">
-                      <button className="bg-red-500 text-white px-3 py-1 rounded-full hover:bg-red-600 transition" onClick={() => handleRemove(product.id, product.price)}>
+                      <button className="bg-red-500 text-white px-3 py-1 rounded-full hover:bg-red-600 transition" onClick={() => handleDecrease(product.id, product.price)}>
                         -
                       </button>
                       <span className="mx-2">{product.quantity}</span>
-                      <button className="bg-indigo-500 text-white px-3 py-1 rounded-full hover:bg-blue-600 transition" onClick={() => handleAdd(product.id, product.price)}>
+                      <button className="bg-indigo-500 text-white px-3 py-1 rounded-full hover:bg-blue-600 transition" onClick={() => handleIncrease(product.id, product.price)}>
                         +
                       </button>
                     </div>
