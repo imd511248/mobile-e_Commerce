@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increase, decrease, removeItem } from "../Store/cartSlice";
+import { increase, decrease, removeItem, clearAll } from "../Store/cartSlice";
 import NavBar from "../Component/Navbar";
 import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -22,7 +22,7 @@ const Cart = () => {
   };
   const clearAllProduct = () => {
     for (let i = 0; i < items.length; i++) {
-      dispatch(removeItem({ id: items[i].id, price: items[i].price }));
+      dispatch(clearAll({ id: items[i].id, price: items[i].price }));
     }
   };
   // handleAdd;
