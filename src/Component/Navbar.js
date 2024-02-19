@@ -30,8 +30,8 @@ const NavBar = () => {
         behavior: "smooth",
       });
     } else {
-      id.style.left = "-100%";
-      bg.style.left = "-100%";
+      id.style.left = "-150%";
+      bg.style.left = "-150%";
       body.style.overflow = "";
       setActive(true);
     }

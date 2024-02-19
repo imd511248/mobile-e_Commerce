@@ -62,7 +62,7 @@ const ProductList = ({ searchTerm }) => {
 
   return (
     <>
-      <div className="opacity-20 bg-slate-400 h-screen w-screen absolute -left-full top-16 z-30" id="bg"></div>
+      <div className="opacity-20 bg-slate-400 h-screen w-screen absolute -left-[150%] top-16 z-30" id="bg"></div>
 
       <div className="container mx-auto p-8">
         {/* <div className="flex place-items-end w-11/11 p-4 border-b border-gray-500 bg-slate-100 relative shadow-md mb-4 ml-36">
