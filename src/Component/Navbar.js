@@ -17,18 +17,21 @@ const NavBar = () => {
   };
   const sidebarHandler = () => {
     let id = document.getElementById("sidebar");
+    let bg = document.getElementById("bg");
     let body = document.querySelector("body");
     if (active) {
       id.style.left = "0";
+      bg.style.left = "0";
       body.style.overflow = "hidden";
+      setActive(false);
       window.scrollTo({
         top: 0,
         left: 0,
         behavior: "smooth",
       });
-      setActive(false);
     } else {
-      id.style.left = "-150%";
+      id.style.left = "-100%";
+      bg.style.left = "-100%";
       body.style.overflow = "";
       setActive(true);
     }

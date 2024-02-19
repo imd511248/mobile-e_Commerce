@@ -53,16 +53,16 @@ const ProductList = ({ searchTerm }) => {
     return itemName.includes(searchTerm.toLowerCase());
   };
   if (status === STATUSES.LOADING) {
-    return <h2>Loading....</h2>;
+    return <h2 className="text-center">Loading....</h2>;
   }
 
   if (status === STATUSES.ERROR) {
-    return <h2>Something went wrong!</h2>;
+    return <h2 className="text-center">Something went wrong!</h2>;
   }
 
   return (
     <>
-      {/* <div className="h-screen bg-red-500 w2/4">Filter</div> */}
+      <div className="opacity-20 bg-slate-400 h-screen w-screen absolute -left-full top-16 z-30" id="bg"></div>
 
       <div className="container mx-auto p-8">
         {/* <div className="flex place-items-end w-11/11 p-4 border-b border-gray-500 bg-slate-100 relative shadow-md mb-4 ml-36">
@@ -72,24 +72,23 @@ const ProductList = ({ searchTerm }) => {
 
         <div className="flex justify-between gap-4 relative">
           <aside
-            className="w-11/12 sm:w-4/5 md:w-3/5 lg:w-4/12 xl-w-3/12 absolute -left-[150%] ease-in-out duration-500 top-0 z-40 h-80 border-gray-700 border bg-slate-400"
+            className="w-11/12 sm:w-4/5 md:w-3/5 lg:w-4/12 xl-w-3/12 absolute -left-[150%] ease-in-out duration-500 top-0 z-40 h-screen border-gray-700 border bg-blue-400"
             id="sidebar">
-            <div className="opacity-20 bg-slate-400 h-screen w-screen absolute -left-[225px] -top-[122px] -z-50"></div>
             <h2 className="text-lg font-semibold mb-4 px-2  border-gray-500 bg-slate-200">Filter By Price</h2>
             <div className="ml-3">
-              <label className="block mb-2">
-                <input className="mr-2" name="0-100" value="0-100" type="checkbox" onChange={() => handlePriceRangeChange("0-100")} />0 - 100
+              <label className="block mb-2 w-fit">
+                <input className="mr-2 w-fit" name="0-100" value="0-100" type="checkbox" onChange={() => handlePriceRangeChange("0-100")} />0 - 100
               </label>
-              <label className="block mb-2">
+              <label className="block mb-2 w-fit">
                 <input className="mr-2" name="100-500" value="100-500" type="checkbox" onChange={() => handlePriceRangeChange("100-500")} />
                 100 - 500
               </label>
 
-              <label className="block mb-2">
+              <label className="block  w-fit mb-2">
                 <input className="mr-2" name="500-1000" value="500-1000" type="checkbox" onChange={() => handlePriceRangeChange("500-1000")} />
                 500 - 1000
               </label>
-              <label className="block mb-2">
+              <label className="block mb-2  w-fit">
                 <input className="mr-2" name="1000" value="1000" type="checkbox" onChange={() => handlePriceRangeChange("1000")} />
                 above 1000
               </label>
